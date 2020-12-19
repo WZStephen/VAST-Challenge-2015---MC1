@@ -1,0 +1,101 @@
+#wrapper{
+    margin:auto;
+    width: 1660px;
+    /*width:1920px;*/
+    /*height: 1080px;*/
+    /*overflow:auto;!* to get scroll *!*/
+}
+input{
+    width:100px;
+}
+svg{
+    border:1px solid gray;
+    border-radius:10px;
+    width:800px;
+    height:800px;
+    margin: auto;
+    /*display:block;*/
+    /*margin:auto;*/
+}
+/*#chart-svg {*/
+/*    width:800px;*/
+/*}*/
+div.d-flex {
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+html{
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+
+h2, h3 {
+    text-align:center;
+}
+
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: .5rem;
+    background: #FFFFFF;
+    color: #313639;
+    border: 1px solid #313639;
+    border-radius: 8px;
+    pointer-events: none;
+    font-size: 1.3rem;
+}
+
+.dropdown1, .dropdown2, .dropdown3, .input,.play {
+    display:inline;
+}
+
+
+/* The Modal (background) */
+.modal_window {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation:fadein 0.5s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+/* Modal Content */
+.svg_window {
+    background-color: rgb(52, 58, 64);
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+
+}
+
+/* The Close Button */
+.close_btn {
+    color: #aaaaaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close_btn:hover, .close_btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

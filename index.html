@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>CSE578 Course Project</title>
+    <!--    link to css-->
+    <link rel='stylesheet' href='css/styles.css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--    link to locale-->
+    <script src='scripts/utilities.js'></script>
+    <script src='scripts/main_src.js'></script>
+    <script src='scripts/drawImage.js'></script>
+    <script src='scripts/FirstRowVis.js'></script>
+    <script src='scripts/SecondRowVis.js'></script>
+
+    <!--    d3 libs-->
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src="https://d3js.org/d3-color.v2.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v2.min.js"></script>
+    <script src="./d3/d3.scale.chromatic.js"></script>
+    <script src="./d3/d3.topojson.js"></script>
+    <script src="./d3/d3.queue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/d3-color.v2.min.js"></script>
+    <script src="https://d3js.org/d3-format.v2.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v2.min.js"></script>
+    <script src="https://d3js.org/d3-time.v2.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v3.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="https://d3js.org/d3-timer.v1.min.js"></script>
+
+    <!--    Bootstrap libs-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body class="p-3 mb-2 bg-dark text-white">
+<div id='wrapper'>
+    <h2>CSE578 - Mayhem at DinoFun World</h2>
+    <!--    <h3>Weichi Zhao - wzhao42@asu.edu - 1209692845</h3> -->
+    <hr style='width:100%' color="grey">
+    <div class="container mt-3" style="font-family: 'Times New Roman'">
+        <p class="font-weight-bold text-center">
+            Week Days:
+            <select id="week_days" onchange="animatedSize();charSelection()">
+                <option value="Friday">Friday - 06/06/2014</option>
+                <option value="Saturday">Saturday - 06/07/2014</option>
+                <option value="Sunday">Sunday - 06/08/2014</option>
+            </select>
+
+&nbsp;            Statistics:
+            <select id="statistics_selection" onchange="charSelection()">
+                <option value="line_chart">Line Chart</option>
+                <option value="bar_chart">Barchart</option>
+            </select>
+
+            Time Stamp:
+            <button onclick="decrement()">-</button>
+            <input id='timestamp_input' type='text' value="08:00" onchange="animatedSize()"/>
+            <button onclick="increment()">+</button>
+            &nbsp;
+            <button type="button" class="btn btn-outline-primary" id= "play_btn" onclick="animatedPlay()">Start</button>
+            <button type="button" class="btn btn-outline-danger" id= "stop_btn">Stop</button>
+            <button type="button" class="btn btn-outline-warning" onclick= "reset()">Reset</button>
+        </p>
+    </div>
+    <svg id='image-svg'></svg>
+    <svg id='chart-svg'></svg>
+    <hr style='width:100%' >
+    <svg id='groups-svg'></svg>
+    <svg id='averageBar-svg'></svg>
+
+    <div id="myModal" class="modal_window">
+        <div class="svg_window">
+            <span class="close">&times;</span>
+            <svg id='groupVis-svg' style="border: 0; display: block; margin: auto"></svg>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
